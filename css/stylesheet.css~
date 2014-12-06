@@ -1,0 +1,46 @@
+.textoEnviar{
+	width: 650px;
+}
+
+.textoMostrar{
+	text-align: left;
+	width: 730px;
+	height: 300px;
+	margin: 0% 20%;
+	padding:10px 40px; 
+	border: 2px solid;
+	border-radius: 25px;
+	overflow-y: scroll;
+}
+
+body{
+	text-align: center;
+}
+
+.areaUsuario{
+	margin: 0% 20%;
+	float: right;
+}
+
+.areaMensaje{
+	margin: 0% 20%;
+	float: left;
+}
+
+.mensajeEnviado{
+	color: green;
+}
+
+.mensajeError{
+	color: red;
+}
+
+img{
+	float: right;
+	height: 120px;
+	width: 170px;
+}
+
+footer{
+	text-align: right;
+}

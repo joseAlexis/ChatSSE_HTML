@@ -1,0 +1,135 @@
+#txtTexto{
+	width: 650px;
+}
+
+.textoMostrar{
+	margin: 0% 22%;
+	text-align: left;
+	width: 730px;
+	height: 300px;
+	padding:10px 40px; 
+	border: 2px solid;
+	border-radius: 7px;
+	overflow-y: scroll;
+	background-color: white;
+	position: relative;
+}
+
+body{
+	text-align: center;
+}
+
+.bodyRojo{
+	text-align: center;
+	background: red;
+}
+
+.areaUsuario{
+	margin: 0% 22%;
+	float: right;
+}
+
+.areaMensaje{
+	margin: 0% 20%;
+	float: center;
+	position: relative;
+}
+
+.mensajeEnviado{
+	color: green;
+	background: gray;
+}
+
+.mensajeError{
+	color: red;
+	background: gray;
+}
+
+#logo{
+	float: right;
+	height: 150px;
+	width: 230px;
+}
+
+footer{
+	text-align: right;
+}
+
+.invisible{
+	visibility: hidden;
+}
+
+a:link {
+	color: blue;
+	text-decoration: none;
+}
+a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#003366;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:active {
+	color: blue;
+	text-decoration: none;
+}
+
+.emoticonos{
+	height: 50px;
+	width: 50px;
+	background-color: transparent;
+}
+
+.historialUsuarios{
+	width: 180px;
+	height: 300px;
+	border: 2px solid;
+	position: absolute;
+	overflow-y: scroll;
+	background-color: white;
+}
+
+#tituloHistorial{
+	width: 180px;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	border-left: 2px solid;
+	position: absolute;
+	background-color: gray;
+}
+
+.archivo{
+	margin: 0% 22%;
+	float: left;
+	position: absolute;
+}
+
+#msjAdjunto{
+	color: #006600;
+}
+
+#otros{
+	background: gray;
+	color: white;
+	float: right;
+	font: bold 120%;
+}
+
+#menuEmoticonos{
+	border: 2px solid;
+	visibility: hidden;
+	background-color: white;
+	width: 350px;
+	height: 50px;
+	margin: 0% 29%;
+}
+/*
+#exportar{
+	margin: 70%, 0%;
+	position: absolute;
+}*/

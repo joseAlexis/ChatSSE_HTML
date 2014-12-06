@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+
+<header>
+		<img src="imagenes/WeChat.png" alt="" >
+</header>
+<?php
+	if(isset($_GET['comentario'])) {
+		$contenido = $_GET['comentario'];
+		
+		if($contenido == "Me gusta el rojo") {
+			echo '<body id="body" style="background-color:red">';
+		}
+	}
+	else {
+		echo '<body id="body">'; 	
+	}
+?>
+<body id="body">
+	<br>
+	<br>
+	<br>
+	<input type="color" onclick="">
+	<div class="textoMostrar" id="txtChat"></div>
+	
+	<form method="POST" action="index.php" id="frmChat">
+		<div class="areaUsuario">
+		<label>Nickname: </label>
+		<?php
+			if(isset($_POST['txtUsuario'])) {
+				$usuario = $_POST['txtUsuario'];
+				
+				if($usuario == "") {
+					echo "<input type='text' name='txtUsuario'>";			
+				}
+				else {
+					echo "<input type='text' name='txtUsuario' value='$usuario'>";
+				}
+			}
+			else {
+				echo "<input type='text' name='txtUsuario'>";			
+			}
+		?>
+		</div>
+		
+		<br>
+		<br>
+		
+		<div class="areaMensaje">
+		<label>Mensaje: </label>
+		<input type="text" id="txtTexto" class="textoEnviar" name="texto">
+				
+		<input type="submit" value="Enviar" id="btnEnviar" class="boton" onclick="validarPalabras()" >
+		</div>
+	</form>
+	
+	<br>
+	<br>
+	
+	<input type="text" id="demo">
+	<input type="button" value="Mostrar posicion" onclick="getLocation()">
+	<br>
+	<br>
+	
+	<?php 
+		
+		$nombreArchivo = "chat.txt";
+		
+		if(isset($_GET['comentario'])) {
+			if(isset($_POST['txtUsuario'])) {
+				$usuario = $_POST['txtUsuario'];				
+				
+				if($usuario == "")
+				{	
+					echo "<label class='mensajeError'>Error! Debe escribir un nickname...</label>";
+				}
+				else {
+					if(isset($_GET['ubicacion'])) {
+						$ubicacion = $_GET['ubicacion'];
+						
+						$ubicacion = "(<a href='index.php'>".$ubicacion."</a>)";
+						
+						$usuario = "<b>".$usuario."</b>";
+						
+						$contenido = $_GET['comentario'];				
+										
+						$contenido .= $ubicacion;
+						$contenido .= "<br>";
+						
+						$contenido .= "/**fin**/";
+						
+						$gestor = fopen($nombreArchivo, "a") or die ("Problemas en la creacion"); 
+			
+						fwrite($gestor, $usuario.": ".$contenido);
+					
+						echo "<label class='mensajeEnviado'>Mensaje Enviado!...</label>";
+			
+						fclose($gestor);
+					}
+					else {
+						echo "<label class='mensajeError'>No se encontro su ubicacion, favor volverlo a intentar</label>";
+					}
+				}
+			}
+		}
+	?>
+	
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+<b>Hecho por:</b>
+Jose A. Bolanos Bolanos.
+
+</footer>
+</html>
